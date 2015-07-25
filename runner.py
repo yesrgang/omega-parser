@@ -16,10 +16,6 @@ if (last_checked != None):
     last_checked_time = datetime.datetime.strptime(last_checked, '%Y-%m-%dT%H:%M:%S')
     reporter.last_checked = last_checked_time
 
-def save_last_checked_time(time):
-    config['last_checked'] = time
-    config.save()
-
 while True:
     try:
         sys.stdout.write('.')
