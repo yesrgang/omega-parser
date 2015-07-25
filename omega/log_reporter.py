@@ -71,7 +71,7 @@ class LogReporter(object):
     def read(self, callback=None):
         count = 0
 
-        f = file(self.file_path)
+        f = open(self.file_path, 'rb')
 
         # seek EOF
         f.seek(0, 2)
