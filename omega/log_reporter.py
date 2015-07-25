@@ -5,7 +5,7 @@ from influxdb import InfluxDBClient
 def utc_iso_string(dt):
     # hard coded for now ...
     local_tz = pytz.timezone('America/Denver')
-    return dt.replace(tzinfo=local_tz).astimezone(pytz.utc)
+    return local_tz.localize(dt).astimezone(pytz.utc)
 
 class DataPoint(object):
     def __init__(self, reading_line):
